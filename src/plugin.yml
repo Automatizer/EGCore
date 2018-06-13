@@ -1,0 +1,5 @@
+name: EGCore
+author: Auto
+main: main.Main
+description: Enchantment Gems' core plugin.
+version: 0.1
