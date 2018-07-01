@@ -2,6 +2,7 @@ package Utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -81,6 +82,15 @@ public class ConfigManager {
 			return false;
 		}
 		return true;
+	}
+	
+	public static void setDefaults(File file, ArrayList<String> settings) {
+		for(String s : settings) {
+			if(s.contains(";")) {
+				String[] option = s.split(";");
+				setValue(file, option[0], option[1]);
+			}
+		}
 	}
 	
 	public static void setValue(File file, String key, Object value) {
